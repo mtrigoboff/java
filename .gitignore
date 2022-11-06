@@ -1,0 +1,20 @@
+# ignore all files
+*
+
+# unignore all dirs
+!*/
+
+# unignore source files
+!*.java
+
+# unignore Netbeans project files
+!*.xml
+!*.properties
+!*.mf
+!**/nbproject/private/*
+
+# unignore Markdown files
+!*.md
+
+# unignore .gitignore
+!.gitignore
