@@ -1,18 +1,14 @@
-
-
-import java.awt.*;
 import java.awt.event.*;
-import mlt.swingwindow.*;
 
 public class DockingSimulatorWindow {
 
-    private static SwingWindow			wn;
+    private static mlt.SwingWindow		wn;
 	private static DockingSimulator		ds;
     
     public static void main(String[] args) {
 		ds = new DockingSimulator();
 		ds.init();
-		wn = new SwingWindow("Docking Simulator", 600, 540, ds);
+		wn = new mlt.SwingWindow("Docking Simulator", 600, 540, ds);
 		System.out.println("adding listeners");
 		ds.setFocusable(true);
 		ds.addMouseListener(

@@ -1,4 +1,4 @@
-package mlt.docksim;
+package docksim;
 
 // (c) 2000 MLT Software, Inc.  All Rights Reserved.
 

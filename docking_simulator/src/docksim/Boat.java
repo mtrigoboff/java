@@ -1,4 +1,4 @@
-package mlt.docksim;
+package docksim;
 
 import java.awt.*;
 

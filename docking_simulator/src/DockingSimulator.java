@@ -1,18 +1,24 @@
 // (c) 2000-2003 MLT Software, Inc.  All Rights Reserved.
 
+import docksim.util.PersistentStatusMsgClient;
+import docksim.util.PersistentStatusMsg;
+import docksim.VectorInput;
+import docksim.Boat;
+import docksim.FramedPanel;
+import docksim.Simulator;
+import docksim.BoatSingleIO;
+import docksim.GaugeDisplay;
+import docksim.SimulatorApplet;
+import docksim.HelpText;
 import java.awt.*;
 import java.awt.event.KeyEvent;
+import javax.swing.*;
 
-import mlt.docksim.*;
-import mlt.docksim.util.*;
 
 public class DockingSimulator
-	extends Panel
+	extends JPanel
 	implements SimulatorApplet, PersistentStatusMsgClient
 {
-//	public DockingSimulator() {
-//
-//	}
 	private final static int windIndex = 0;
 	private final static int currentIndex = 1;
 

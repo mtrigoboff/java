@@ -1,9 +1,8 @@
 // (c) 1999-2000 MLT Software, Inc.  All Rights Reserved.
 
-package mlt.docksim;
+package docksim;
 
 import java.awt.*;
-import mlt.docksim.*;
 
 public class BoatSingleIO
 	implements Boat

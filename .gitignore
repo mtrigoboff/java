@@ -11,10 +11,17 @@
 !*.xml
 !*.properties
 !*.mf
-!**/nbproject/private/*
 
 # unignore Markdown files
 !*.md
 
 # unignore .gitignore
 !.gitignore
+
+/concordance/nbproject/private/
+/mlt/nbproject/private/
+/mlt/build/
+/mlt/dist/
+/concordance/build/
+/docking_simulator/dist/
+/docking_simulator/build/
