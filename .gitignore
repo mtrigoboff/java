@@ -25,6 +25,7 @@
 /concordance/build/
 /docking_simulator/dist/
 /docking_simulator/build/
+/docking_simulator/nbproject/private/
 /temperature/nbproject/private/
 /temperature/build/
 /set_demo/nbproject/private/
