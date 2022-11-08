@@ -14,11 +14,10 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import javax.swing.*;
 
-
 public class DockingSimulator
-	extends JPanel
-	implements SimulatorApplet, PersistentStatusMsgClient
-{
+		extends JPanel
+		implements SimulatorApplet, PersistentStatusMsgClient {
+
 	private final static int windIndex = 0;
 	private final static int currentIndex = 1;
 
@@ -31,18 +30,17 @@ public class DockingSimulator
 	private final static Color dockLineColor = dockColor.darker();
 	private final static float pixelsPerFoot = ((float) 4.0) / (float) 3.0;
 	private final static int dockBoardWidth = 8;
-	private final static Rectangle[] dockRects =
-		{
-			new Rectangle(40, 40, 320, 20),
-			new Rectangle(40, 60, 20, 120),
-			new Rectangle(90, 60, 20, 60),
-			new Rectangle(140, 60, 20, 60),
-			new Rectangle(190, 60, 20, 60),
-			new Rectangle(240, 60, 20, 60),
-			new Rectangle(290, 60, 20, 60),
-			new Rectangle(340, 60, 20, 60),
-			new Rectangle(40, 180, 260, 20),
-			};
+	private final static Rectangle[] dockRects
+			= {
+				new Rectangle(40, 40, 320, 20),
+				new Rectangle(40, 60, 20, 120),
+				new Rectangle(90, 60, 20, 60),
+				new Rectangle(140, 60, 20, 60),
+				new Rectangle(190, 60, 20, 60),
+				new Rectangle(240, 60, 20, 60),
+				new Rectangle(290, 60, 20, 60),
+				new Rectangle(340, 60, 20, 60),
+				new Rectangle(40, 180, 260, 20),};
 
 	private final static String forwardStr = "Forward";
 	private final static String neutralStr = "Neutral";
@@ -78,41 +76,45 @@ public class DockingSimulator
 	private Simulator simulator;
 	private Boat boat = new BoatSingleIO();
 
-	private String[] vectorHelp =
-		{
-			"To set current",
-			"or wind, click",
-			"in labeled circle.",
-			"Wind or current",
-			"direction is from",
-			"center of circle",
-			"to the edge." };
+	private String[] vectorHelp
+			= {
+				"To set current",
+				"or wind, click",
+				"in labeled circle.",
+				"Wind or current",
+				"direction is from",
+				"center of circle",
+				"to the edge."};
 
-	private String[] bottomHelp =
-		{
-			"Use UP and DOWN arrow keys to control the boat's throttle. Use LEFT and RIGHT arrow keys to steer.",
-			"Position of throttle and rudder are shown at top of window.  Hit DOWN arrow when in Neutral for Reverse."
-		// "Hit the \"s\" key or the \"Start Over\" button to restart."
-	};
+	private String[] bottomHelp
+			= {
+				"Use UP and DOWN arrow keys to control the boat's throttle. Use LEFT and RIGHT arrow keys to steer.",
+				"Position of throttle and rudder are shown at top of window.  Hit DOWN arrow when in Neutral for Reverse."
+			// "Hit the \"s\" key or the \"Start Over\" button to restart."
+			};
 
-	private final static String versionStr =
-		"Docking Simulator (c) 2000-2008 MLT Software, Inc.  All Rights Reserved.  Version 1.07";
+	private final static String versionStr
+			= "Docking Simulator (c) 2000-2008 MLT Software, Inc.  All Rights Reserved.  Version 1.07";
 
 	public synchronized boolean action(Event event, Object what) {
-		if (event.target == startOverBtn)
+		if (event.target == startOverBtn) {
 			startOver();
-		else if (event.target == zeroBtn)
+		} else if (event.target == zeroBtn) {
 			zeroSettings();
+		}
 		requestFocus();
 		return true;
 	}
+
 	public void blankStatus() {
 		showStatus(" ");
 	}
+
 	public void boatHitDock() {
 		setThrottlePosn(0);
 		boatHitDock = true;
 	}
+
 	public synchronized void init() {
 		Label label;
 		Panel settings;
@@ -125,32 +127,32 @@ public class DockingSimulator
 		{
 			boolean showGauges = false;
 
-			simulator =
-				new Simulator(
-					waterColor,
-					boatColor,
-					boatLineColor,
-					frameColor,
-					dockRects,
-					dockColor,
-					dockLineColor,
-					dockBoardWidth,
-					boat,
-					initialBoatX,
-					initialBoatY,
-					initialBoatHeading,
-					pixelsPerFoot,
-					50,
-					this,
-					showGauges);
+			simulator
+					= new Simulator(
+							waterColor,
+							boatColor,
+							boatLineColor,
+							frameColor,
+							dockRects,
+							dockColor,
+							dockLineColor,
+							dockBoardWidth,
+							boat,
+							initialBoatX,
+							initialBoatY,
+							initialBoatHeading,
+							pixelsPerFoot,
+							50,
+							this,
+							showGauges);
 		}
 
-		displays =
-			new FramedPanel(
-				frameColor,
-				Color.lightGray,
-				new Insets(1, 1, 1, 1),
-				new BorderLayout());
+		displays
+				= new FramedPanel(
+						frameColor,
+						Color.lightGray,
+						new Insets(1, 1, 1, 1),
+						new BorderLayout());
 		displays.setBackground(Color.lightGray);
 
 		displaysCenter = new Panel();
@@ -160,9 +162,9 @@ public class DockingSimulator
 		label = new Label("Rudder", Label.RIGHT);
 		label.setForeground(Color.black);
 		displaysCenter.add(label);
-		rudderAngleDisplay =
-			new TextField(
-				Math.max(portStr.length(), starboardStr.length()) + 2);
+		rudderAngleDisplay
+				= new TextField(
+						Math.max(portStr.length(), starboardStr.length()) + 2);
 		// + 2 for space and number
 		rudderAngleDisplay.setBackground(Color.lightGray);
 		rudderAngleDisplay.setForeground(Color.blue);
@@ -172,11 +174,11 @@ public class DockingSimulator
 		label = new Label("Throttle", Label.RIGHT);
 		label.setForeground(Color.black);
 		displaysCenter.add(label);
-		throttlePosnDisplay =
-			new TextField(
-				Math.max(
-					forwardStr.length(),
-					Math.max(neutralStr.length(), reverseStr.length()) + 2));
+		throttlePosnDisplay
+				= new TextField(
+						Math.max(
+								forwardStr.length(),
+								Math.max(neutralStr.length(), reverseStr.length()) + 2));
 		// + 2 for space and number
 		throttlePosnDisplay.setBackground(Color.lightGray);
 		throttlePosnDisplay.setForeground(Color.blue);
@@ -191,8 +193,9 @@ public class DockingSimulator
 		startOver.add(startOverBtn);
 
 		gaugeDisplay = simulator.getBoatGaugeDisplay();
-		if (gaugeDisplay != null)
+		if (gaugeDisplay != null) {
 			displays.add("South", gaugeDisplay);
+		}
 
 		displays.add("Center", displaysCenter);
 		displays.add("East", startOver);
@@ -202,26 +205,26 @@ public class DockingSimulator
 			int centerOffsetX = 1;
 			int centerOffsetY = 1;
 
-			settings =
-				new FramedPanel(
-					frameColor,
-					Color.lightGray,
-					new Insets(0, 1, 0, 1),
-					new BorderLayout());
-			windControl =
-				new VectorInput(
-					this,
-					windIndex,
-					"Wind",
-					" knots",
-					Color.blue,
-					94,
-					128,
-					14,
-					30,
-					3,
-					centerOffsetX,
-					centerOffsetY);
+			settings
+					= new FramedPanel(
+							frameColor,
+							Color.lightGray,
+							new Insets(0, 1, 0, 1),
+							new BorderLayout());
+			windControl
+					= new VectorInput(
+							this,
+							windIndex,
+							"Wind",
+							" knots",
+							Color.blue,
+							94,
+							128,
+							14,
+							30,
+							3,
+							centerOffsetX,
+							centerOffsetY);
 			centered1 = new Panel();
 			centered1.setBackground(Color.lightGray);
 			centered1.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
@@ -230,20 +233,20 @@ public class DockingSimulator
 			settings2 = new Panel();
 			settings2.setBackground(Color.lightGray);
 			settings2.setLayout(new BorderLayout());
-			currentControl =
-				new VectorInput(
-					this,
-					currentIndex,
-					"Current",
-					" knots",
-					Color.blue,
-					94,
-					128,
-					14,
-					9,
-					3,
-					centerOffsetX,
-					centerOffsetY);
+			currentControl
+					= new VectorInput(
+							this,
+							currentIndex,
+							"Current",
+							" knots",
+							Color.blue,
+							94,
+							128,
+							14,
+							9,
+							3,
+							centerOffsetX,
+							centerOffsetY);
 			centered2 = new Panel();
 			centered2.setBackground(Color.lightGray);
 			centered2.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
@@ -261,12 +264,12 @@ public class DockingSimulator
 		}
 
 		{
-			Panel bottomHelpFrame =
-				new FramedPanel(
-					frameColor,
-					Color.lightGray,
-					new Insets(1, 1, 1, 1),
-					new BorderLayout());
+			Panel bottomHelpFrame
+					= new FramedPanel(
+							frameColor,
+							Color.lightGray,
+							new Insets(1, 1, 1, 1),
+							new BorderLayout());
 
 			add("North", displays);
 			add("Center", simulator);
@@ -279,102 +282,121 @@ public class DockingSimulator
 
 		startOverBtn.requestFocus();
 	}
+
 	private void forward() {
-		if (boatHitDock)
+		if (boatHitDock) {
 			recoverFromCollision();
+		}
 		setThrottlePosn(
-			Math.min(throttlePosn + 1, boat.getThrottlePosnMax()));
+				Math.min(throttlePosn + 1, boat.getThrottlePosnMax()));
 		simulator.setBoatThrottlePosn(throttlePosn);
 	}
+
 	private void backward() {
-		if (boatHitDock)
+		if (boatHitDock) {
 			recoverFromCollision();
+		}
 		setThrottlePosn(
-			Math.max(throttlePosn - 1, boat.getThrottlePosnMin()));
+				Math.max(throttlePosn - 1, boat.getThrottlePosnMin()));
 		simulator.setBoatThrottlePosn(throttlePosn);
 	}
+
 	public synchronized void keyDown(KeyEvent e) {
 		switch (e.getKeyChar()) {
-			case 's', 'S' -> startOver();
-			case 'z', 'Z' -> zeroSettings();
-			case 'g', 'G' -> forward();
-			case 'b', 'B' -> backward();
+			case 's', 'S' ->
+				startOver();
+			case 'z', 'Z' ->
+				zeroSettings();
+			case 'g', 'G' ->
+				forward();
+			case 'b', 'B' ->
+				backward();
 			default -> {
-				switch(e.getKeyCode()) {
+				switch (e.getKeyCode()) {
 					case KeyEvent.VK_UP, KeyEvent.VK_KP_UP ->
 						forward();
 					case KeyEvent.VK_DOWN, KeyEvent.VK_KP_DOWN ->
 						backward();
 					case KeyEvent.VK_LEFT, KeyEvent.VK_KP_LEFT -> {
 						setRudderAngle(
-							Math.max(rudderAngle - 1, boat.getRudderAngleMin()));
+								Math.max(rudderAngle - 1, boat.getRudderAngleMin()));
 						simulator.setBoatRudderAngle(rudderAngle);
-						}
+					}
 					case KeyEvent.VK_RIGHT, KeyEvent.VK_KP_RIGHT -> {
 						setRudderAngle(
-							Math.min(rudderAngle + 1, boat.getRudderAngleMax()));
+								Math.min(rudderAngle + 1, boat.getRudderAngleMax()));
 						simulator.setBoatRudderAngle(rudderAngle);
-						}
+					}
 				}
 			}
 		}
 	}
+
 	private void recoverFromCollision() {
 		simulator.recoverFromCollision();
 		boatHitDock = false;
 		simulator.start();
 	}
+
 	private void setRudderAngle(int rudderAngle) {
 		rudderAngleDisplay.setText(
-			rudderAngle == 0
-				? amidshipsStr
-				: (rudderAngle < 0 ? portStr : starboardStr)
-					+ " "
-					+ Math.abs(rudderAngle));
+				rudderAngle == 0
+						? amidshipsStr
+						: (rudderAngle < 0 ? portStr : starboardStr)
+						+ " "
+						+ Math.abs(rudderAngle));
 		this.rudderAngle = rudderAngle;
 	}
-	public void setSpeed(float speed) {}
+
+	public void setSpeed(float speed) {
+	}
+
 	private void setThrottlePosn(int throttlePosn) {
 		throttlePosnDisplay.setText(
-			throttlePosn == 0
-				? neutralStr
-				: (throttlePosn > 0 ? forwardStr : reverseStr)
-					+ " "
-					+ Math.abs(throttlePosn));
+				throttlePosn == 0
+						? neutralStr
+						: (throttlePosn > 0 ? forwardStr : reverseStr)
+						+ " "
+						+ Math.abs(throttlePosn));
 		this.throttlePosn = throttlePosn;
 	}
+
 	public synchronized void setVectorValue(
-		int index,
-		float direction,
-		float value) {
+			int index,
+			float direction,
+			float value) {
 		switch (index) {
-			case windIndex :
+			case windIndex:
 				simulator.setWind(direction, value);
 				break;
-			case currentIndex :
+			case currentIndex:
 				simulator.setCurrent(direction, value);
 				break;
 		}
 	}
+
 	public synchronized void start() {
 		simulator.start();
 
 		new PersistentStatusMsg(this, versionStr, 5);
 	}
+
 	private void startOver() {
 		setThrottlePosn(0);
 		setRudderAngle(0);
 		boatHitDock = false;
 		simulator.reset();
 	}
+
 	public synchronized void stop() {
 		simulator.stop();
 	}
+
 	private void zeroSettings() {
 		windControl.reset();
 		currentControl.reset();
 	}
-	
+
 	public void showStatus(String status) {
 	}
 }

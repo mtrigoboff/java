@@ -1,9 +1,9 @@
 package docksim.util;
 
 // (c) 2000 MLT Software, Inc.  All Rights Reserved.
+public interface PersistentStatusMsgClient {
 
-public interface PersistentStatusMsgClient
-{
-	void blankStatus ();
-	void showStatus (String msg);
+	void blankStatus();
+
+	void showStatus(String msg);
 }
