@@ -18,6 +18,7 @@
 # unignore .gitignore
 !.gitignore
 
+/_temp
 /concordance/nbproject/private/
 /mlt/nbproject/private/
 /mlt/build/
