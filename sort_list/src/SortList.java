@@ -17,6 +17,7 @@ public class SortList {
 	students.add(new Student("Ann", (float) 2.84));
 	students.add(new Student("Jim", (float) 0.34));
 	
+	// using a lambda comparator to specify the sort order
 	students.sort((s1, s2) -> Float.compare(s1.getGpa(), s2.getGpa()));
 	
 	print();
