@@ -17,42 +17,47 @@
  * competition for locks.									*/
 
 class ThreadDemo1b
-    implements Runnable
-{
-    private int     id;
+	implements Runnable {
 
-    ThreadDemo1b(int id)
-    {
-        this.id = id;
+    private int id;
+
+    ThreadDemo1b(int id) {
+	this.id = id;
     }
 
-    public synchronized void run()
-    {
-        // print id 10 times with pauses in between
-        for (int i = 0; i < 10; i++) {
-            System.out.print(id);
-            try { Thread.sleep(500); } catch (InterruptedException e) { }
-            }
+    public synchronized void run() {
+	// print id 10 times with pauses in between
+	for (int i = 0; i < 10; i++) {
+	    System.out.print(id);
+	    try {
+		Thread.sleep(500);
+	    } catch (InterruptedException e) {
+	    }
+	}
     }
 
-    public static void main(String[] args)
-    {
-        Thread[]    threads = new Thread[3];
+    public static void main(String[] args) {
+	Thread[] threads = new Thread[3];
 
-        // create the threads
-        for (int i = 0; i < threads.length; i++)
-            threads[i] = new Thread(new ThreadDemo1b(i));
+	// create the threads
+	for (int i = 0; i < threads.length; i++) {
+	    threads[i] = new Thread(new ThreadDemo1b(i));
+	}
 
-        System.out.print("1b: ");
+	System.out.print("1b: ");
 
-        // start the threads
-        for (int i = 0; i < threads.length; i++)
-            threads[i].start();
+	// start the threads
+	for (int i = 0; i < threads.length; i++) {
+	    threads[i].start();
+	}
 
-        // wait for the threads to finish
-        for (int i = 0; i < threads.length; i++)
-            try { threads[i].join(); } catch (InterruptedException e) { }
+	// wait for the threads to finish
+	for (int i = 0; i < threads.length; i++)
+            try {
+	    threads[i].join();
+	} catch (InterruptedException e) {
+	}
 
-        System.out.println(" |");
+	System.out.println(" |");
     }
 }
