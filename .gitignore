@@ -18,6 +18,9 @@
 # unignore .gitignore
 !.gitignore
 
+# unignore sun_clock .gif files
+!/sun_clock/src/*.gif
+
 /_temp
 /concordance/nbproject/private/
 /mlt/nbproject/private/
