@@ -1,16 +1,12 @@
 
 // (c) 1995 - 1998 MLT Software, Inc.  All Rights Reserved.
-import java.awt.*;
 import java.io.*;
-import java.lang.*;
-import java.net.*;
-import java.util.*;
 
 final class ShadowCurve {
 
     static final int curveWidth = 512;
 
-    static URL tableDirectoryURL;
+    static String tableDirectoryPath;
     static float pixelsPerMin;												// pixels/day / mins/day
 
     public int[] mapY;
@@ -67,10 +63,10 @@ final class ShadowCurve {
 	return shadowOffset;
     }
 
-    static void init(URL codeBase) {
+    static void init() {
 	pixelsPerMin = (float) (curveWidth / 1440.0);			// pixels/day / mins/day
 	try {
-	    tableDirectoryURL = new URL(codeBase, "sctables/");
+	    tableDirectoryPath = "tables/";
 	} catch (Exception e) {
 	    System.out.print("ShadowCurve.init: ");
 	    System.out.println(e.toString());
@@ -78,14 +74,15 @@ final class ShadowCurve {
     }
 
     private void load() {
-	URL scTableURL;
-	URLConnection scTableConn;
+	String scTablePath;
+	File scTable;
 	InputStream scTableInput;
 	DataInputStream scTableData;
 
 	try {
-	    scTableURL = new URL(tableDirectoryURL, "sctbl" + index);
-	    scTableInput = scTableURL.openStream();
+	    scTablePath = tableDirectoryPath + "sctbl" + Integer.toString(index);
+	    scTable = new File(scTablePath);
+	    scTableInput = new FileInputStream(scTable);
 	    scTableData = new DataInputStream(scTableInput);
 	    for (int i = 0; i < curveWidth; i++) {
 		curveY[i] = scTableData.readShort();

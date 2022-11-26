@@ -3,35 +3,27 @@
 import java.awt.*;
 import java.awt.image.*;
 import java.io.*;
-import java.lang.*;
-import java.net.*;
-import java.util.*;
 import javax.imageio.ImageIO;
-import javax.swing.*;
 
 final public class SunClockApplet
 	extends javax.swing.JPanel {
 
     SunClockCanvas scCanvas;
 
-    URL codeBase;
-
     BufferedImage dayMapImage;
     BufferedImage nightMapImage;
 
-    int appletHeight;
-    int appletWidth;
-
     Object imageLock = new Object();
 
-    public void init() {
+    public Dimension init() {
 	MediaTracker mt = new MediaTracker(this);
-
+	Dimension mapDimensions = new Dimension();
+	
 	// find and preload the map images
 	try {
-	    dayMapImage = ImageIO.read(new File("src/daymap.gif"));
+	    dayMapImage = ImageIO.read(new File("maps/daymap.gif"));
 	    mt.addImage(dayMapImage, 0);
-	    nightMapImage = ImageIO.read(new File("src/niteMap.gif"));
+	    nightMapImage = ImageIO.read(new File("maps/niteMap.gif"));
 	    mt.addImage(nightMapImage, 0);
 	    mt.waitForAll();
 	} catch (IOException e) {
@@ -40,19 +32,20 @@ final public class SunClockApplet
 	    throw new Error("SunClockApplet.init: interrupted exception");
 	}
 
-	// size the applet to the images (day and night are the same size)
-	appletWidth = dayMapImage.getWidth(this) + 2;
-	appletHeight = dayMapImage.getHeight(this) + 2;
-	resize(appletWidth, appletHeight);
+	// report image width, height (day and night are the same size)
+	mapDimensions.width = dayMapImage.getWidth(this) + 2;
+	mapDimensions.height = dayMapImage.getHeight(this) + 2;
 
 	setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
 	// after much frustrating experimentation, it turns out that this is the
 	// best way to add a panel to an applet so that there are no unwanted
 	// margins "helpfully" provided for us by the API
-	scCanvas = new SunClockCanvas(codeBase, dayMapImage, nightMapImage);
+	scCanvas = new SunClockCanvas(dayMapImage, nightMapImage);
 	add("Sun Clock", scCanvas);
 	// adding the name argument makes the panel get added to the layout mgr
 	// (this was discovered by examination of the Container class code)
+    
+	return mapDimensions;
     }
 
     public synchronized void start() {

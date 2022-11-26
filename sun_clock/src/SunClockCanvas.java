@@ -1,16 +1,10 @@
-
-// (c) 1995 - 1998 MLT Software, Inc.  All Rights Reserved.
+// (c) 1995 - 2022 Michael Trigoboff.  All Rights Reserved.
 import java.awt.*;
-import java.io.*;
-import java.lang.*;
-import java.net.*;
-import java.util.*;
 
 final class SunClockCanvas
 	extends Canvas
 	implements Runnable {
 
-    URL codeBase;
     DateInfo dateInfo;
     Image dayMapImage;
     int mapHeight;
@@ -22,8 +16,7 @@ final class SunClockCanvas
     Thread timer = null;
     long updateInterval;
 
-    SunClockCanvas(URL codeBase, Image dayMapImage, Image nightMapImage) {
-	this.codeBase = codeBase;
+    SunClockCanvas(Image dayMapImage, Image nightMapImage) {
 	this.dayMapImage = dayMapImage;
 	this.nightMapImage = nightMapImage;
 
@@ -45,7 +38,7 @@ final class SunClockCanvas
 	// dateInfo.print();
 
 	// compute time-dependent information needed to draw the shadow
-	ShadowCurve.init(codeBase);
+	ShadowCurve.init();
 	shadowCurve = new ShadowCurve(dateInfo);
     }
 

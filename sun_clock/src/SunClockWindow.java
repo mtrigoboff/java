@@ -1,3 +1,4 @@
+import java.awt.Dimension;
 import java.awt.event.*;
 
 public class SunClockWindow {
@@ -6,10 +7,12 @@ public class SunClockWindow {
     private static SunClockApplet sca;
 
     public static void main(String[] args) {
+	Dimension mapDimensions;
+
 	sca = new SunClockApplet();
-	sca.init();
-	wn = new mlt.SwingWindow("Sun Clock", 600, 540, sca);
-	System.out.println("adding listeners");
+	mapDimensions = sca.init();
+	// add 33 for window header height
+	wn = new mlt.SwingWindow("Sun Clock", mapDimensions.width, mapDimensions.height + 33, sca);
 	sca.setFocusable(true);
 	wn.addWindowListener(new WindowAdapter() {
 	    public void windowClosed(WindowEvent e) {
