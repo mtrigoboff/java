@@ -13,6 +13,7 @@ public class SunClockWindow {
 	mapDimensions = sca.init();
 	// add 33 for window header height
 	wn = new mlt.SwingWindow("Sun Clock", mapDimensions.width, mapDimensions.height + 33, sca);
+	wn.setResizable(false);
 	sca.setFocusable(true);
 	wn.addWindowListener(new WindowAdapter() {
 	    public void windowClosed(WindowEvent e) {
