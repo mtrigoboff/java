@@ -19,7 +19,8 @@
 !.gitignore
 
 # unignore sun_clock .gif files
-!/sun_clock/src/*.gif
+!/sun_clock/maps/*.gif
+!/sun_clock/tables/*
 
 /_temp
 /concordance/nbproject/private/
@@ -59,3 +60,5 @@
 /implicit_coupling/nbproject/private/
 /gui_demo/build/
 /sun_clock/nbproject/private/
+/sun_clock2/nbproject/private/
+/sun_clock/build/
