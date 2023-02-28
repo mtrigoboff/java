@@ -10,7 +10,7 @@ public class ArrayList<I>
 
 	@SuppressWarnings("unchecked")
 	public ArrayList(int arraySize) {
-		items = (I[]) new Object[arraySize];	// can't do this: items = new I[];		
+		items = (I[]) new Object[arraySize]; // can't do this: items = new I[];
 		this.nItems = 0;
 	}
 

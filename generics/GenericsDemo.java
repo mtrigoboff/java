@@ -17,7 +17,7 @@ public class GenericsDemo {
 			doubles.add(1.414);
 			doubles.add(3.14);
 			doubles.add(6.02e23);
-			//doubles.add(1);				// can't add an int
+			// doubles.add(1); // can't add an int
 
 			System.out.println(doubles);
 		}
@@ -36,13 +36,13 @@ public class GenericsDemo {
 		}
 
 		{
-			//ArrayList<Number>				nums = new ArrayList<Integer>(4);
+			// ArrayList<Number> nums = new ArrayList<Integer>(4);
 			// ArrayList<Integer> is not a subtype of ArrayList<Number>
 
 			ArrayList<Integer> integers = new ArrayList<>(4);
 			ArrayList<? extends Number> numbers = integers;
 
-			//numbers.add(1);				// compiler doesn't know datatype contained by list -
+			// numbers.add(1); // compiler doesn't know datatype contained by list -
 			// what if the capture of <? extends Number> is Double?
 			integers.add(1);
 			integers.add(2);

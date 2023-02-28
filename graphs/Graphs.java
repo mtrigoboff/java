@@ -7,12 +7,12 @@ public class Graphs {
 		System.out.printf("Shortest path from %s to %s:%n", start, end);
 		System.out.println(shortestPath);
 	}
-	
+
 	public static void main(String[] args) {
 		Graph graph = new Graph("graphs/cities.txt");
-		
+
 		System.out.println(graph);
-		
+
 		shortestPath(graph, "Seattle", "Miami");
 		shortestPath(graph, "Boston", "LosAngeles");
 	}

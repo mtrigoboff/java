@@ -26,29 +26,29 @@ public interface Boat {
      * Insert the method's description here. Creation date: (3/26/2003 5:21:49
      * PM)
      *
-     * @param color java.awt.Color
-     * @param lineColor java.awt.Color
-     * @param initialX int
-     * @param initialY int
+     * @param color          java.awt.Color
+     * @param lineColor      java.awt.Color
+     * @param initialX       int
+     * @param initialY       int
      * @param initialHeading float
-     * @param simulator mlt.docksim.Simulator
-     * @param showGauges boolean
+     * @param simulator      mlt.docksim.Simulator
+     * @param showGauges     boolean
      */
     void init(
-	    Color color,
-	    Color lineColor,
-	    int initialX,
-	    int initialY,
-	    float initialHeading,
-	    Simulator simulator,
-	    boolean showGauges);
+            Color color,
+            Color lineColor,
+            int initialX,
+            int initialY,
+            float initialHeading,
+            Simulator simulator,
+            boolean showGauges);
 
     /**
      * Insert the method's description here. Creation date: (3/26/2003 5:22:43
      * PM)
      *
-     * @param initialX int
-     * @param initialY int
+     * @param initialX          int
+     * @param initialY          int
      * @param initialHeadingDeg float
      */
     void initPosn(int initialX, int initialY, float initialHeadingDeg);
@@ -78,7 +78,7 @@ public interface Boat {
      * PM)
      *
      * @param direction float
-     * @param value float
+     * @param value     float
      */
     void setCurrent(float direction, float value);
 
@@ -105,7 +105,7 @@ public interface Boat {
      * PM)
      *
      * @param direction float
-     * @param value float
+     * @param value     float
      */
     void setWind(float direction, float value);
 

@@ -1,4 +1,3 @@
-
 public class JavaSystemProperties {
 
     public static void main(String[] args) {

@@ -13,7 +13,7 @@ public class Concordance {
 		SortedMap<String, Integer> map = new TreeMap<>();
 
 		words: for (;;) {
-			System.out.print("> ");
+			System.out.print("enter word: ");
 			line = mlt.stdin.getLineWords();
 			if (line == null) {
 				continue;

@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Deck {
 
-	private List<Card> cards;          // the cards of the deck
-	private int cardsPerLine;   // how many cards to show per line
+	private List<Card> cards; // the cards of the deck
+	private int cardsPerLine; // how many cards to show per line
 
 	private static final List<Card> prototypeDeck = new ArrayList<>();
 
@@ -36,13 +36,15 @@ public class Deck {
 	public String toString() {
 		int cardsOnLine = 0;
 		StringBuilder strb = new StringBuilder();
-		/* When making a lot of changes to a string,
-             * it's better to use a StringBuilder because
-             * a StringBuilder instance can be altered.
-             * String instances are immutable, so you would
-             * be creating many new instances of String and
-             * throwing all but one of them away in this method
-             * if you used String instead of StringBuilder.      */
+		/*
+		 * When making a lot of changes to a string,
+		 * it's better to use a StringBuilder because
+		 * a StringBuilder instance can be altered.
+		 * String instances are immutable, so you would
+		 * be creating many new instances of String and
+		 * throwing all but one of them away in this method
+		 * if you used String instead of StringBuilder.
+		 */
 
 		for (Card card : cards) {
 			if (cardsOnLine != 0) {

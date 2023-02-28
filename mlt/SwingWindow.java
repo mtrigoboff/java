@@ -24,9 +24,9 @@ public class SwingWindow extends JFrame {
 	/**
 	 * Creates a Swing window that will hold the specified contents.
 	 *
-	 * @param title The window title.
-	 * @param width The window width.
-	 * @param height The window height.
+	 * @param title    The window title.
+	 * @param width    The window width.
+	 * @param height   The window height.
 	 * @param contents The window contents.
 	 */
 	public SwingWindow(String title, int width, int height, JComponent contents) {
@@ -48,7 +48,7 @@ public class SwingWindow extends JFrame {
 	 * Sets a character that can be typed to close the window.
 	 *
 	 * @param vkChar The character, which must be a VK_... constant from
-	 * java.awt.KeyEvent.
+	 *               java.awt.KeyEvent.
 	 */
 	public void setQuitChar(int vkChar) {
 		final String QUIT_ACTION = "SW_QUIT";

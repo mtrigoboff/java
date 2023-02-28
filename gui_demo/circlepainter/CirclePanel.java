@@ -13,53 +13,53 @@ import javax.swing.JRadioButton;
 @SuppressWarnings("serial")
 
 class CirclePanel
-	extends JPanel
-	implements ItemListener {
+		extends JPanel
+		implements ItemListener {
 
-    static class RadioBtn
-	    extends JRadioButton {
+	static class RadioBtn
+			extends JRadioButton {
 
-	Color color;          // color for the circle when this radio button is selected
+		Color color; // color for the circle when this radio button is selected
 
-	RadioBtn(String name, Color color, ButtonGroup btnGroup) {
-	    super(name);
-	    this.color = color;
-	    btnGroup.add(this);
+		RadioBtn(String name, Color color, ButtonGroup btnGroup) {
+			super(name);
+			this.color = color;
+			btnGroup.add(this);
+		}
 	}
-    }
 
-    private Color color;
-    private int circleSizePct;   // diameter as a percent of size
+	private Color color;
+	private int circleSizePct; // diameter as a percent of size
 
-    CirclePanel(Color color, int circleSizePct) {
-	this.color = color;
-	this.circleSizePct = circleSizePct;
-    }
+	CirclePanel(Color color, int circleSizePct) {
+		this.color = color;
+		this.circleSizePct = circleSizePct;
+	}
 
-    public void setCircleSize(int circleSizePct) {
-	this.circleSizePct = circleSizePct;
-	repaint();
-    }
+	public void setCircleSize(int circleSizePct) {
+		this.circleSizePct = circleSizePct;
+		repaint();
+	}
 
-    public Color getColor() {
-	return color;
-    }
+	public Color getColor() {
+		return color;
+	}
 
-    public void paintComponent(Graphics g) {
-	super.paintComponent(g);
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
 
-	Dimension size = getSize();
-	int width = size.width;
-	int height = size.height;
-	int circleWidth = width * circleSizePct / 100;
-	int circleHeight = height * circleSizePct / 100;
+		Dimension size = getSize();
+		int width = size.width;
+		int height = size.height;
+		int circleWidth = width * circleSizePct / 100;
+		int circleHeight = height * circleSizePct / 100;
 
-	g.setColor(color);
-	g.fillOval((width - circleWidth) / 2, (height - circleHeight) / 2, circleWidth, circleHeight);
-    }
+		g.setColor(color);
+		g.fillOval((width - circleWidth) / 2, (height - circleHeight) / 2, circleWidth, circleHeight);
+	}
 
-    public void itemStateChanged(ItemEvent e) {
-	color = ((RadioBtn) e.getItemSelectable()).color;
-	repaint();
-    }
+	public void itemStateChanged(ItemEvent e) {
+		color = ((RadioBtn) e.getItemSelectable()).color;
+		repaint();
+	}
 }

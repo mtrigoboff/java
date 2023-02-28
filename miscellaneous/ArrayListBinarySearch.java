@@ -5,13 +5,13 @@ public class ArrayListBinarySearch {
 
 	static {
 		for (int i = 0; i < 10; i++)
-			ali.add(2 * i + 1);	
+			ali.add(2 * i + 1);
 	}
 
 	static boolean binarySearch(int n, int start, int end) {
 		int half = start + (end - start) / 2;
 		int val = ali.get(half);
-		
+
 		if (n == val)
 			return true;
 		else if (end <= start + 1)
@@ -21,11 +21,11 @@ public class ArrayListBinarySearch {
 		else
 			return binarySearch(n, half + 1, end);
 	}
-	
+
 	static boolean binarySearch(int n) {
 		return binarySearch(n, 0, ali.size());
 	}
-	
+
 	public static void main(String[] args) {
 		System.out.print("array: ");
 		for (int i : ali)

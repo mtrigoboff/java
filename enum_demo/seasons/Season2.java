@@ -7,7 +7,7 @@ public enum Season2 {
 
 	// print list of values with commas in between
 	static void printValues(PrintStream out) {
-		boolean first = true;       // no comma before first item
+		boolean first = true; // no comma before first item
 
 		for (Season2 season : Season2.values()) {
 			out.print((first ? "" : ", ") + season);

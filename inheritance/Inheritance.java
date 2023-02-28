@@ -8,11 +8,11 @@ public class Inheritance {
 		Bird penguin = new Bird("penguin", false);
 		Fish shark = new Fish("shark", true);
 		Fish goldfish = new Fish("goldfish", false);
-		
+
 		System.out.println(eagle);
 		System.out.println(penguin);
 		System.out.println(shark);
 		System.out.println(goldfish);
 	}
-	
+
 }

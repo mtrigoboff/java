@@ -4,13 +4,12 @@ import java.io.*;
 
 public class GetHTML {
 
-	private static String[] cmdLineArgs = {"http://spot.pcc.edu/~mtrigobo", "25"};
+	private static String[] cmdLineArgs = { "http://spot.pcc.edu/~mtrigobo", "25" };
 
 	public static void main(String[] args)
 			throws Exception {
-		if (args == null || args.length == 0) {
+		if (args == null || args.length == 0)
 			args = cmdLineArgs;
-		}
 
 		URL url;
 		int nLines;

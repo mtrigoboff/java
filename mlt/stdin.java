@@ -3,7 +3,8 @@ package mlt;
 import java.util.Scanner;
 
 /**
- * Defines static methods for getting user input from the console window, and for parsing
+ * Defines static methods for getting user input from the console window, and
+ * for parsing
  * numerical input.
  *
  * @version 3.2
