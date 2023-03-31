@@ -1,7 +1,7 @@
 package animals;
 
 abstract class Animal {
-	String species;
+	protected String species;
 
 	Animal(String species) {
 		this.species = species;
