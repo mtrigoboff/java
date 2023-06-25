@@ -11,7 +11,6 @@ public class DockingSimulatorWindow {
 		ds.init();
 		wn = new mlt.SwingWindow("Docking Simulator", 600, 540, ds);
 		wn.setResizable(false);
-		System.out.println("adding listeners");
 		ds.setFocusable(true);
 		ds.addMouseListener(
 				new MouseAdapter() {
