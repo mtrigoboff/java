@@ -34,7 +34,6 @@ abstract public class Vehicle
         nEngines = nEng;
     }
 
-
     abstract public void printTopSpeed();
 
     public void printDescription()
