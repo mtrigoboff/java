@@ -59,7 +59,8 @@ class Vehicles
 
             switch (cmd) {
             	case "count":
-                    System.out.println(items.size() + " items");
+                    int nVehicles = items.size();
+                    System.out.println(nVehicles + (nVehicles == 1 ? " item" : " items"));
             		break;
             	case "help":
                     for (String h : help)
