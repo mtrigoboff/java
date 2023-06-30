@@ -41,7 +41,7 @@ abstract public class Vehicle
         System.out.println("    engines: " + nEngines);
     }
 
-    public  String getName()
+    public String getName()
     {
         return name;
     }

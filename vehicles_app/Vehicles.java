@@ -82,7 +82,7 @@ class Vehicles
                     if (items.containsKey(key))
                 		System.out.println("there is already a vehicle named \"" + key + "\"");
                 	else {
-                        items.put(key, v);              // add new vehicle to HashMap
+                        items.put(key, v);
                         System.out.println("item added");
                 		}
             		break;
