@@ -42,6 +42,11 @@ public class CirclePainterPanel
 	private TextField circleSizeTxt;
 	private JPanel circlePanel;
 	JButton dialogBtn;
+	JSlider slider;
+	ButtonGroup btnGroup = new ButtonGroup();
+	CirclePanel.RadioBtn[] rBtns = { new CirclePanel.RadioBtn("Red", Color.red, btnGroup),
+			new CirclePanel.RadioBtn("Green", Color.green, btnGroup),
+			new CirclePanel.RadioBtn("Blue", Color.blue, btnGroup) };
 
 	public CirclePainterPanel() {
 		JPanel guiPanel = new FramedPanel(FramedPanel.Level.HIGH, new GridLayout(3, 3, 20, 20));
@@ -66,8 +71,8 @@ public class CirclePainterPanel
 		// middle row
 		{
 			JPanel sliderPanel = new FramedPanel();
-			JSlider slider = new JSlider(0, 100, circleSizePct);
 
+			slider = new JSlider(0, 100, circleSizePct);
 			sliderPanel.setLayout(new BorderLayout());
 			slider.addChangeListener(this);
 			sliderPanel.add(slider, BorderLayout.NORTH);
@@ -88,11 +93,6 @@ public class CirclePainterPanel
 		}
 
 		{
-			ButtonGroup btnGroup = new ButtonGroup();
-			CirclePanel.RadioBtn[] rBtns = { new CirclePanel.RadioBtn("Red", Color.red, btnGroup),
-					new CirclePanel.RadioBtn("Green", Color.green, btnGroup),
-					new CirclePanel.RadioBtn("Blue", Color.blue, btnGroup) };
-
 			JPanel rbPanel = new FramedPanel();
 
 			rbPanel.setLayout(new GridLayout(3, 1));
@@ -117,15 +117,25 @@ public class CirclePainterPanel
 
 		// add guiPanel to this panel
 		add(guiPanel, BorderLayout.CENTER);
+	
+		// start with checkbox unchecked, rest of GUI disabled
+		setupGUI(false);
+	}
+
+	private void setupGUI(boolean enabled) {
+		circle.setVisible(enabled);
+		dialogBtn.setEnabled(enabled);
+		circleSizeTxt.setEnabled(enabled);
+		slider.setEnabled(enabled);
+		for (int i = 0; i < rBtns.length; i++) {
+			rBtns[i].setEnabled(enabled);
+		circlePanel.validate();
+		}
 	}
 
 	// only the "Show CirclePanel" check box uses this listener
 	public void itemStateChanged(ItemEvent e) {
-		boolean enabled = ((JCheckBox) e.getItemSelectable()).isSelected();
-
-		circle.setVisible(enabled);
-		dialogBtn.setEnabled(enabled);
-		circlePanel.validate();
+		setupGUI(((JCheckBox) e.getItemSelectable()).isSelected());
 	}
 
 	// only the slider uses this listener
