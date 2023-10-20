@@ -1,6 +1,6 @@
 package animals;
 
-abstract class Animal {
+abstract public class Animal {
 	protected String species;
 
 	Animal(String species) {
