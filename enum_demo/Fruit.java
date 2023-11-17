@@ -8,6 +8,7 @@ public enum Fruit {
 
 		Fruit f = PEAR;
 
+		f = APPLE;
 		if (f == APPLE)
 			System.out.println("APPLE");
 	}
