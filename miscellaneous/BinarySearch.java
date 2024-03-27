@@ -9,7 +9,7 @@ public class BinarySearch {
 		"oscar", "papa", "quebec", "romeo", "sierra", "tango", "uniform",
 		"victor", "whiskey", "xray", "yankee", "zulu"};
 
-static boolean binarySearch(String[] a, String s) {
+	static boolean binarySearch(String[] a, String s) {
 		int start = 0;
 		int end = a.length - 1;
 		int half;
