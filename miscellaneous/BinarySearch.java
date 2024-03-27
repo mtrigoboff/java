@@ -3,13 +3,11 @@ import java.util.Scanner;
 
 public class BinarySearch {
 	
-	static String[] a26 = {
+	static String[] coastGuardLetters = {
 		"alpha", "bravo", "charlie", "delta", "echo", "foxtrot", "golf",
 		"hotel", "india", "juliet", "kilo", "lima", "mike", "november",
 		"oscar", "papa", "quebec", "romeo", "sierra", "tango", "uniform",
 		"victor", "whiskey", "xray", "yankee", "zulu"};
-	static String[] a1 = {"alpha"};
-	static String[] a2 = {"alpha", "bravo"};
 
 static boolean binarySearch(String[] a, String s) {
 		int start = 0;
@@ -30,29 +28,27 @@ static boolean binarySearch(String[] a, String s) {
 		return false;
 	}
 
-	static String[] selectArray(Scanner sc)
+	static String[] createArray(Scanner sc)
 	{
-		String[] a = null;			// stupid compier demands this initialization
-		int select;
-		boolean selected = false;	// stupid compier demands this initialization
-		do {
-			System.out.print("enter 1 for a1, 2 for a2, 3 for a26: ");
+		String[] array;			// stupid compier demands this initialization
+		int size;
+		while (true) {
+			System.out.print("enter array size, 1 through 26: ");
 			try {
-				select = sc.nextInt();
+				size = sc.nextInt();
+				sc.nextLine();
+				if (size < 0 || size > 26)
+					continue;
+				break;
 			} catch (InputMismatchException e) {
-				sc.nextLine();		// empty input buffer
+				sc.nextLine();		// clear input buffer
 				continue;
 			}
-			sc.nextLine();
-			selected = true;
-			switch (select) {
-				case 1: a = a1; break;
-				case 2: a = a2; break;
-				case 3: a = a26; break;
-				default: selected = false; break;
-			}
-		} while (! selected);
-		return a;
+		}
+		array = new String[size];
+		for (int i = 0; i < size; i++)
+			array[i] = coastGuardLetters[i];
+		return array;
 	}
 
 	public static void main(String[] args) {
@@ -60,7 +56,7 @@ static boolean binarySearch(String[] a, String s) {
 		String str;
 		Scanner sc = new Scanner(System.in);
 		
-		a = selectArray(sc);
+		a = createArray(sc);
 		System.out.println("enter search string, empty string to exit");
 		while (true) {
 			System.out.print("-> ");
