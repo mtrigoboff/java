@@ -1,5 +1,3 @@
-package seasons;
-
 import java.io.PrintStream;
 
 public enum Season2 {

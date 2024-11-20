@@ -1,7 +1,7 @@
 
-import java.util.*;
-
-import mlt.stdin;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
 
 public enum FoodType {
 	DAIRY("milk", "cheese"),
@@ -28,25 +28,24 @@ public enum FoodType {
 	}
 
 	public static void main(String[] args) {
-		String[] line;
+		String line;
 		FoodType foodType;
 
 		System.out.println("FoodType 1.1");
 
-		for (;;) {
-			System.out.print("> ");
-			line = stdin.getLineWords();
-			if (line == null || line.length == 0) {
-				continue;
-			}
-			if (line[0].equalsIgnoreCase("EXIT")) {
-				break;
-			}
-			foodType = exampleMap.get(line[0]);
-			if (foodType == null) {
-				System.out.printf("%s is not an example of any food type%n", line[0]);
-			} else {
-				System.out.printf("%s is an example of food type %s%n", line[0], foodType);
+		try (Scanner sc = new Scanner(System.in)) {
+			for (;;) {
+				System.out.print("> ");
+				line = sc.nextLine();
+				if (line == null || line.length() == 0) {
+					break;
+				}
+				foodType = exampleMap.get(line);
+				if (foodType == null) {
+					System.out.printf("%s is not an example of any food type%n", line);
+				} else {
+					System.out.printf("%s is an example of food type %s%n", line, foodType);
+				}
 			}
 		}
 

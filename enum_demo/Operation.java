@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public enum Operation {
 	// do arithmetic op represented by this constant
@@ -33,21 +35,21 @@ public enum Operation {
 	}
 
 	public static void main(String args[]) {
-		double x = 6.0;
-		double y = 3.0;
+		System.out.println("Operation");
+		try (Scanner sc = new Scanner(System.in)) {
+			for (;;) {
+				double x, y;
+				System.out.print("enter two doubles (non-number to exit): ");
+				try {
+					x = sc.nextDouble();
+					y = sc.nextDouble();
+				} catch (InputMismatchException e) {	// non-number
+					break;
+				}
 
-		if (args.length >= 2) {
-			try {
-				x = Double.parseDouble(args[0]);
-				y = Double.parseDouble(args[1]);
-			} catch (NumberFormatException e) {
-				System.out.println("Argument to main() was not a number.");
-				return;
+				for (Operation op : Operation.values())
+					System.out.printf("%5.1f %s %-5.1f = %5.1f%n", x, op.opStr, y, op.eval(x, y));
 			}
-		}
-
-		for (Operation op : Operation.values()) {
-			System.out.printf("%5.1f %s %-5.1f = %5.1f%n", x, op.opStr, y, op.eval(x, y));
 		}
 	}
 }

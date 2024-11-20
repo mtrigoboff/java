@@ -1,7 +1,5 @@
-package cards;
-
 public class Card
-		implements Comparable<Card> {
+	implements Comparable<Card> {
 
 	public enum Rank {
 		DEUCE, THREE, FOUR, FIVE, SIX, SEVEN,

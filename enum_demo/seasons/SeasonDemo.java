@@ -1,9 +1,8 @@
-package seasons;
-
 public class SeasonDemo {
 
 	public static void main(String[] args) {
 		// print values of Season
+		System.out.println("SeasonDemo");
 		System.out.print("values of Season:       ");
 		for (Season season : Season.values()) {
 			System.out.print(season + " ");

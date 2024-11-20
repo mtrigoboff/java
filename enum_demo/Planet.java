@@ -1,3 +1,5 @@
+import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public enum Planet {
 	// mass radius
@@ -54,16 +56,28 @@ public enum Planet {
 	}
 
 	public static void main(String[] args) {
-		double earthWeight = (args != null && args.length > 0)
-				? Double.parseDouble(args[0])
-				: 100;
-		double mass = earthWeight / EARTH.surfaceGravity();
+		System.out.println("Planet");
 
-		for (Planet p : Planet.values()) {
-			System.out.printf(
-					"%-36s%8.2f%n",
-					"Your weight on " + p + " is: ",
-					p.surfaceWeight(mass));
+		try (Scanner sc = new Scanner(System.in)) {
+			for (;;) {
+				double earthWeight;
+
+				System.out.print("enter your weight (non-number to exit): ");
+				try {
+					earthWeight = sc.nextDouble();
+				} catch (InputMismatchException e) {	// non-number
+					break;
+				}
+
+				double mass = earthWeight / EARTH.surfaceGravity();
+
+				for (Planet p : Planet.values()) {
+					System.out.printf(
+							"%-36s%8.2f%n",
+							"Your weight on " + p + " is: ",
+							p.surfaceWeight(mass));
+				}
+			}
 		}
 	}
 }
