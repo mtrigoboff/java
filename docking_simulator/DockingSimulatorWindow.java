@@ -3,13 +3,13 @@ import java.awt.event.*;
 
 public class DockingSimulatorWindow {
 
-	private static mlt.SwingWindow wn;
+	private static SwingWindow wn;
 	private static DockingSimulator ds;
 
 	public static void main(String[] args) {
 		ds = new DockingSimulator();
 		ds.init();
-		wn = new mlt.SwingWindow("Docking Simulator", 600, 540, ds);
+		wn = new SwingWindow("Docking Simulator", 600, 540, ds);
 		wn.setResizable(false);
 		ds.setFocusable(true);
 		ds.addMouseListener(
