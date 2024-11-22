@@ -16,7 +16,9 @@ final class ShadowCurve {
 	int offset;
 	int[] curveY;
 
-	ShadowCurve(DateInfo dateInfo) {
+	ShadowCurve(DateInfo dateInfo, String appDirectory) {
+		pixelsPerMin = (float) (curveWidth / 1440.0); // pixels/day / mins/day
+		tableDirectoryPath = appDirectory + "/tables/";
 		curveY = new int[curveWidth];
 		oldMapY = new int[curveWidth];
 		mapY = new int[curveWidth];
@@ -61,16 +63,6 @@ final class ShadowCurve {
 
 		// System.out.println("ShadowCurve:computeOffset " + shadowOffset);
 		return shadowOffset;
-	}
-
-	static void init() {
-		pixelsPerMin = (float) (curveWidth / 1440.0); // pixels/day / mins/day
-		try {
-			tableDirectoryPath = "tables/";
-		} catch (Exception e) {
-			System.out.print("ShadowCurve.init: ");
-			System.out.println(e.toString());
-		}
 	}
 
 	private void load() {

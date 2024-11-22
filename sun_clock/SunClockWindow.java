@@ -10,7 +10,7 @@ public class SunClockWindow {
 		Dimension mapDimensions;
 
 		sca = new SunClockApplet();
-		mapDimensions = sca.init();
+		mapDimensions = sca.init(args[0]);
 		// add 33 for window header height
 		wn = new mlt.SwingWindow("Sun Clock", mapDimensions.width, mapDimensions.height + 33, sca);
 		wn.setResizable(false);

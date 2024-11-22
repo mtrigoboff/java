@@ -6,318 +6,269 @@
 	"configurations": [
 		{
 			"type": "java",
-			"name": "Current File",
-			"request": "launch",
-			"mainClass": "${file}"
-		},
-		{
-			"type": "java",
 			"name": "ArrayListBinarySearch",
 			"request": "launch",
-			"mainClass": "ArrayListBinarySearch",
-			"projectName": "java_213494cc"
+			"mainClass": "ArrayListBinarySearch"
 		},
 		{
 			"type": "java",
 			"name": "ArrayListNumbersSort",
 			"request": "launch",
-			"mainClass": "ArrayListNumbersSort",
-			"projectName": "java_213494cc"
+			"mainClass": "ArrayListNumbersSort"
 		},
 		{
 			"type": "java",
 			"name": "Concordance",
 			"request": "launch",
-			"mainClass": "Concordance",
-			"projectName": "java_213494cc"
+			"mainClass": "Concordance"
 		},
 		{
 			"type": "java",
 			"name": "DockingSimulatorWindow",
 			"request": "launch",
-			"mainClass": "DockingSimulatorWindow",
-			"projectName": "java_213494cc"
+			"mainClass": "DockingSimulatorWindow"
 		},
 		{
 			"type": "java",
 			"name": "Factorial",
 			"request": "launch",
-			"mainClass": "Factorial",
-			"projectName": "java_213494cc"
+			"mainClass": "Factorial"
 		},
 		{
 			"type": "java",
 			"name": "Fibonbacci",
 			"request": "launch",
-			"mainClass": "Fibonbacci",
-			"projectName": "java_213494cc"
+			"mainClass": "Fibonbacci"
 		},
 		{
 			"type": "java",
 			"name": "FoodType",
 			"request": "launch",
-			"mainClass": "FoodType",
-			"projectName": "java_213494cc"
+			"mainClass": "FoodType"
 		},
 		{
 			"type": "java",
 			"name": "Fruit",
 			"request": "launch",
-			"mainClass": "Fruit",
-			"projectName": "java_213494cc"
+			"mainClass": "Fruit"
 		},
 		{
 			"type": "java",
 			"name": "GarbageCollection",
 			"request": "launch",
-			"mainClass": "GarbageCollection",
-			"projectName": "java_213494cc"
+			"mainClass": "GarbageCollection"
 		},
 		{
 			"type": "java",
 			"name": "GenericsDemo",
 			"request": "launch",
-			"mainClass": "GenericsDemo",
-			"projectName": "java_213494cc"
+			"mainClass": "GenericsDemo"
 		},
 		{
 			"type": "java",
 			"name": "GetHTML",
 			"request": "launch",
-			"mainClass": "GetHTML",
-			"projectName": "java_213494cc"
+			"mainClass": "GetHTML"
 		},
 		{
 			"type": "java",
 			"name": "Graphs",
 			"request": "launch",
-			"mainClass": "Graphs",
-			"projectName": "java_213494cc"
+			"mainClass": "Graphs"
 		},
 		{
 			"type": "java",
 			"name": "ImplicitCouplingApp",
 			"request": "launch",
-			"mainClass": "ImplicitCouplingApp",
-			"projectName": "java_213494cc"
+			"mainClass": "ImplicitCouplingApp"
 		},
 		{
 			"type": "java",
 			"name": "Inheritance",
 			"request": "launch",
-			"mainClass": "Inheritance",
-			"projectName": "java_213494cc"
+			"mainClass": "Inheritance"
 		},
 		{
 			"type": "java",
 			"name": "JavaSystemProperties",
 			"request": "launch",
-			"mainClass": "JavaSystemProperties",
-			"projectName": "java_213494cc"
+			"mainClass": "JavaSystemProperties"
 		},
 		{
 			"type": "java",
 			"name": "LambdaInterface",
 			"request": "launch",
-			"mainClass": "LambdaInterface",
-			"projectName": "java_213494cc"
+			"mainClass": "LambdaInterface"
 		},
 		{
 			"type": "java",
 			"name": "LambdaSimple",
 			"request": "launch",
-			"mainClass": "LambdaSimple",
-			"projectName": "java_213494cc"
+			"mainClass": "LambdaSimple"
 		},
 		{
 			"type": "java",
 			"name": "LinkedList",
 			"request": "launch",
-			"mainClass": "LinkedList",
-			"projectName": "java_213494cc"
+			"mainClass": "LinkedList"
 		},
 		{
 			"type": "java",
 			"name": "ListDemo",
 			"request": "launch",
-			"mainClass": "ListDemo",
-			"projectName": "java_213494cc"
+			"mainClass": "ListDemo"
 		},
 		{
 			"type": "java",
 			"name": "NestedAndInnerClassDemo",
 			"request": "launch",
-			"mainClass": "NestedAndInnerClassDemo",
-			"projectName": "java_213494cc"
+			"mainClass": "NestedAndInnerClassDemo"
 		},
 		{
 			"type": "java",
 			"name": "Operation",
 			"request": "launch",
-			"mainClass": "Operation",
-			"projectName": "java_213494cc"
+			"mainClass": "Operation"
 		},
 		{
 			"type": "java",
 			"name": "Planet",
 			"request": "launch",
 			"mainClass": "Planet",
-			"projectName": "java_213494cc",
 			"args": [215]
 		},
 		{
 			"type": "java",
 			"name": "PrintfDemo",
 			"request": "launch",
-			"mainClass": "PrintfDemo",
-			"projectName": "java_213494cc"
+			"mainClass": "PrintfDemo"
 		},
 		{
 			"type": "java",
 			"name": "SunClockWindow",
 			"request": "launch",
 			"mainClass": "SunClockWindow",
-			"projectName": "java_213494cc"
+			"args": ["sun_clock"]
 		},
 		{
 			"type": "java",
 			"name": "ThreadDemo1a",
 			"request": "launch",
-			"mainClass": "ThreadDemo1a",
-			"projectName": "java_213494cc"
+			"mainClass": "ThreadDemo1a"
 		},
 		{
 			"type": "java",
 			"name": "ThreadDemo1b",
 			"request": "launch",
-			"mainClass": "ThreadDemo1b",
-			"projectName": "java_213494cc"
+			"mainClass": "ThreadDemo1b"
 		},
 		{
 			"type": "java",
 			"name": "ThreadDemo2a",
 			"request": "launch",
-			"mainClass": "ThreadDemo2a",
-			"projectName": "java_213494cc"
+			"mainClass": "ThreadDemo2a"
 		},
 		{
 			"type": "java",
 			"name": "ThreadDemo2b",
 			"request": "launch",
-			"mainClass": "ThreadDemo2b",
-			"projectName": "java_213494cc"
+			"mainClass": "ThreadDemo2b"
 		},
 		{
 			"type": "java",
 			"name": "ThreadDemo3a",
 			"request": "launch",
-			"mainClass": "ThreadDemo3a",
-			"projectName": "java_213494cc"
+			"mainClass": "ThreadDemo3a"
 		},
 		{
 			"type": "java",
 			"name": "ThreadDemo3b",
 			"request": "launch",
-			"mainClass": "ThreadDemo3b",
-			"projectName": "java_213494cc"
+			"mainClass": "ThreadDemo3b"
 		},
 		{
 			"type": "java",
 			"name": "ThreadDemo3c",
 			"request": "launch",
-			"mainClass": "ThreadDemo3c",
-			"projectName": "java_213494cc"
+			"mainClass": "ThreadDemo3c"
 		},
 		{
 			"type": "java",
 			"name": "ThreadDemo3d",
 			"request": "launch",
-			"mainClass": "ThreadDemo3d",
-			"projectName": "java_213494cc"
+			"mainClass": "ThreadDemo3d"
 		},
 		{
 			"type": "java",
 			"name": "Varargs",
 			"request": "launch",
-			"mainClass": "Varargs",
-			"projectName": "java_213494cc"
+			"mainClass": "Varargs"
 		},
 		{
 			"type": "java",
 			"name": "Animate",
 			"request": "launch",
-			"mainClass": "animate.Animate",
-			"projectName": "java_213494cc"
+			"mainClass": "animate.Animate"
 		},
 		{
 			"type": "java",
 			"name": "Cards",
 			"request": "launch",
-			"mainClass": "cardlayout.Cards",
-			"projectName": "java_213494cc"
+			"mainClass": "cardlayout.Cards"
 		},
 		{
 			"type": "java",
 			"name": "Deck",
 			"request": "launch",
-			"mainClass": "cards.Deck",
-			"projectName": "java_213494cc"
+			"mainClass": "cards.Deck"
 		},
 		{
 			"type": "java",
 			"name": "ChooseUI",
 			"request": "launch",
-			"mainClass": "chooseui.ChooseUI",
-			"projectName": "java_213494cc"
+			"mainClass": "chooseui.ChooseUI"
 		},
 		{
 			"type": "java",
 			"name": "CirclePainter",
 			"request": "launch",
-			"mainClass": "circlepainter.CirclePainter",
-			"projectName": "java_213494cc"
+			"mainClass": "circlepainter.CirclePainter"
 		},
 		{
 			"type": "java",
 			"name": "ColorBtns",
 			"request": "launch",
-			"mainClass": "colorbtns.ColorBtns",
-			"projectName": "java_213494cc"
+			"mainClass": "colorbtns.ColorBtns"
 		},
 		{
 			"type": "java",
 			"name": "Draw",
 			"request": "launch",
-			"mainClass": "draw.Draw",
-			"projectName": "java_213494cc"
+			"mainClass": "draw.Draw"
 		},
 		{
 			"type": "java",
 			"name": "ParseSeason",
 			"request": "launch",
-			"mainClass": "seasons.ParseSeason",
-			"projectName": "java_213494cc"
+			"mainClass": "seasons.ParseSeason"
 		},
 		{
 			"type": "java",
 			"name": "SeasonDemo",
 			"request": "launch",
-			"mainClass": "seasons.SeasonDemo",
-			"projectName": "java_213494cc"
+			"mainClass": "seasons.SeasonDemo"
 		},
 		{
 			"type": "java",
 			"name": "Snow",
 			"request": "launch",
-			"mainClass": "snow.Snow",
-			"projectName": "java_213494cc"
+			"mainClass": "snow.Snow"
 		},
 		{
 			"type": "java",
 			"name": "Vehicles",
 			"request": "launch",
-			"mainClass": "vehicles_app.Vehicles",
-			"projectName": "java_213494cc"
+			"mainClass": "vehicles_app.Vehicles"
 		}
 	]
 }

@@ -15,7 +15,7 @@ final public class SunClockApplet
 
 	Object imageLock = new Object();
 
-	public Dimension init() {
+	public Dimension init(String appDirectory) {
 		MediaTracker mt = new MediaTracker(this);
 		Dimension mapDimensions = new Dimension();
 
@@ -40,7 +40,7 @@ final public class SunClockApplet
 		// after much frustrating experimentation, it turns out that this is the
 		// best way to add a panel to an applet so that there are no unwanted
 		// margins "helpfully" provided for us by the API
-		scCanvas = new SunClockCanvas(dayMapImage, nightMapImage);
+		scCanvas = new SunClockCanvas(appDirectory, dayMapImage, nightMapImage);
 		add("Sun Clock", scCanvas);
 		// adding the name argument makes the panel get added to the layout mgr
 		// (this was discovered by examination of the Container class code)

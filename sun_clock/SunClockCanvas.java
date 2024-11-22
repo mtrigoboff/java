@@ -17,7 +17,7 @@ final class SunClockCanvas
 	Thread timer = null;
 	long updateInterval;
 
-	SunClockCanvas(Image dayMapImage, Image nightMapImage) {
+	SunClockCanvas(String appDirectory, Image dayMapImage, Image nightMapImage) {
 		this.dayMapImage = dayMapImage;
 		this.nightMapImage = nightMapImage;
 
@@ -39,8 +39,7 @@ final class SunClockCanvas
 		// dateInfo.print();
 
 		// compute time-dependent information needed to draw the shadow
-		ShadowCurve.init();
-		shadowCurve = new ShadowCurve(dateInfo);
+		shadowCurve = new ShadowCurve(dateInfo, appDirectory);
 	}
 
 	private int divByShadowIncr(int n, boolean nightTop) {
