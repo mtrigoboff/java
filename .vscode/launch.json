@@ -148,7 +148,7 @@
 			"name": "SunClockWindow",
 			"request": "launch",
 			"mainClass": "SunClockWindow",
-			"args": ["sun_clock"]
+			"args": ["sun_clock/"]
 		},
 		{
 			"type": "java",

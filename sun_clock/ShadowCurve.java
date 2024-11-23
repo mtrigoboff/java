@@ -18,7 +18,7 @@ final class ShadowCurve {
 
 	ShadowCurve(DateInfo dateInfo, String appDirectory) {
 		pixelsPerMin = (float) (curveWidth / 1440.0); // pixels/day / mins/day
-		tableDirectoryPath = appDirectory + "/tables/";
+		tableDirectoryPath = appDirectory + "tables/";
 		curveY = new int[curveWidth];
 		oldMapY = new int[curveWidth];
 		mapY = new int[curveWidth];
