@@ -1,4 +1,3 @@
-
 public enum Operation {
 	// do arithmetic op represented by this constant
 	PLUS("+") {
@@ -41,7 +40,7 @@ public enum Operation {
 				x = Double.parseDouble(args[0]);
 				y = Double.parseDouble(args[1]);
 			} catch (NumberFormatException e) {
-				System.out.println("Argument to main() was not a number.");
+				System.out.println(e);
 				return;
 			}
 		}
