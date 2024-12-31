@@ -128,14 +128,15 @@
 			"type": "java",
 			"name": "Operation",
 			"request": "launch",
-			"mainClass": "Operation"
+			"mainClass": "Operation",
+			"args": ["3.x", "2.1"]
 		},
 		{
 			"type": "java",
 			"name": "Planet",
 			"request": "launch",
 			"mainClass": "Planet",
-			"args": [215]
+			"args": ["215"]
 		},
 		{
 			"type": "java",
