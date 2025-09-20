@@ -19,6 +19,7 @@ public class Factorial {
 	}
 	
 	public static void main(String[] args) {
+		System.out.println("Recursion Demo");
 		System.out.printf("factIterative(%d) = %d%n", n, factIterative(n));
 		System.out.printf("factRecursive(%d) = %d%n", n, factRecursive(n));
 	}

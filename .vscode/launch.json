@@ -6,6 +6,13 @@
 	"configurations": [
 		{
 			"type": "java",
+			"name": "SumToN",
+			"request": "launch",
+			"mainClass": "SumToN",
+			"projectName": "java_2460f6e"
+		},
+		{
+			"type": "java",
 			"name": "ArrayListBinarySearch",
 			"request": "launch",
 			"mainClass": "ArrayListBinarySearch"
@@ -129,14 +136,19 @@
 			"name": "Operation",
 			"request": "launch",
 			"mainClass": "Operation",
-			"args": ["3.x", "2.1"]
+			"args": [
+				"3.x",
+				"2.1"
+			]
 		},
 		{
 			"type": "java",
 			"name": "Planet",
 			"request": "launch",
 			"mainClass": "Planet",
-			"args": ["215"]
+			"args": [
+				"215"
+			]
 		},
 		{
 			"type": "java",
@@ -149,7 +161,9 @@
 			"name": "SunClockWindow",
 			"request": "launch",
 			"mainClass": "SunClockWindow",
-			"args": ["sun_clock/"]
+			"args": [
+				"sun_clock/"
+			]
 		},
 		{
 			"type": "java",
